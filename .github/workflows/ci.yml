@@ -37,5 +37,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/maven@master
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven      
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} #add secret
