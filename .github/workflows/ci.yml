@@ -15,18 +15,22 @@ on:
     branches: [ "main" ]
 
 jobs:
+
+  
   build_test:
 
     runs-on: ubuntu-latest
 
     steps:
+    - name: Ensure mvnw is executable
+      run: chmod +x mvnw
     - uses: actions/checkout@v4
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
+        cache: maven   
     - name: Build and test
       #run: mvn -B test
       run: ./mvnw -B -ntp test
