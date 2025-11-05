@@ -30,8 +30,7 @@ jobs:
         distribution: 'temurin'
         cache: maven   
     - name: Build and test
-      #run: mvn -B test
-      run: ./mvnw -B -ntp test
+      run: mvn -B test
 
   snyk_scanning:
     needs: build_test
