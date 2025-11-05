@@ -22,8 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Ensure mvnw is executable
-      run: chmod +x ./mvnw
     - uses: actions/checkout@v4
     - name: Set up JDK 17
       uses: actions/setup-java@v4
